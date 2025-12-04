@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Əlaqə | Murad GeoGar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Əlaqə Formu üçün kiçik CSS əlavəsi */
+        .contact-form input[type="text"], 
+        .contact-form input[type="email"], 
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        </header>
+
+    <main class="container page-content">
+        <section style="padding: 50px 0;">
+            <header style="text-align: center; margin-bottom: 40px;">
+                <h1 style="font-size: 3em; color: var(--primary-color);">Bizimlə Əlaqə Saxlayın</h1>
+                <p style="font-size: 1.2em; color: #666;">Təklif, sual və ya əməkdaşlıq üçün yazın.</p>
+            </header>
+            
+            <form class="contact-form" style="max-width: 600px; margin: auto;">
+                <input type="text" placeholder="Adınız və Soyadınız" required>
+                <input type="email" placeholder="E-mail Ünvanınız" required>
+                <textarea placeholder="Mesajınız" required></textarea>
+                <button type="submit" class="btn-primary" style="width: 100%;">Mesajı Göndər</button>
+                
+                <p style="text-align: center; margin-top: 20px; font-size: 0.9em;">
+                    Alternativ olaraq, birbaşa <a href="mailto:murad.geogar@example.com">murad.geogar@example.com</a> ünvanına yaza bilərsiniz.
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        </footer>
+    <script src="script.js"></script>
+</body>
+</html>

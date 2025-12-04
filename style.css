@@ -1,0 +1,406 @@
+/*
+ * Murad GeoGar Bloq Saytı Üçün YEKUN CSS - Mavi-Narıncı Müasir Dizayn
+ */
+
+/* 1. Əsas Sıfırlama, Fontlar və Rənglər */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Rənglər */
+    --primary-color: #0077b6;   /* Dərin Dəniz Mavisi (Əsas vurğu) */
+    --secondary-color: #f77f00; /* Canlı Narıncı (İkinci dərəcəli vurğu) */
+    --bg-light: #ffffff;        /* Ağ Fon */
+    --bg-dark: #f0f3f5;         /* Açıq Boz (Bölmə fonu) */
+    --text-color: #2c3e50;      /* Tünd Göy (Oxunaqlı mətn) */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08); /* Yumşaq kölgə */
+
+    /* Fontlar */
+    --font-heading: 'Merriweather', serif; 
+    --font-body: 'Roboto', sans-serif;     
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.7; 
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    padding-top: 70px; 
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+/* 2. Başlıq və Naviqasiya */
+.main-header {
+    background: var(--bg-light);
+    border-bottom: 2px solid var(--bg-dark); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex; 
+}
+.main-nav li {
+    margin-left: 20px;
+    position: relative; 
+}
+
+.main-nav a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 10px 5px;
+    display: block;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    box-shadow: var(--shadow-light);
+    min-width: 150px;
+    list-style: none;
+    z-index: 999;
+}
+.dropdown:hover .dropdown-content {
+    display: block; 
+}
+.dropdown-content a {
+    color: white;
+    padding: 10px 15px;
+    text-transform: none; 
+}
+
+.dropdown-content a:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    border-bottom: none;
+}
+
+.menu-toggle {
+    display: none; 
+    background: transparent;
+    border: none;
+    font-size: 2em;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* 3. Düymələr (Buttons) */
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 25px; 
+    padding: 12px 30px;
+    box-shadow: 0 4px 6px rgba(247, 127, 0, 0.4);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #cc6600;
+    box-shadow: 0 6px 10px rgba(247, 127, 0, 0.6);
+}
+
+/* 4. Əsas Bölmələr */
+section {
+    padding: 50px 0;
+}
+
+.hero {
+    background-color: var(--bg-dark); 
+    padding: 100px 0;
+    border-radius: 10px;
+    text-align: center; 
+    margin-bottom: 30px;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 0.2em;
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+
+/* 5. Bloq Yazıları Bölməsi (Kart Dizaynı) */
+.latest-posts h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--text-color);
+    position: relative;
+}
+
+.latest-posts h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color); 
+    border-radius: 2px;
+}
+
+.posts-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.post-card {
+    background: var(--bg-light);
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.4s, box-shadow 0.4s;
+    overflow: hidden;
+}
+
+.post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.post-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.post-info {
+    padding: 25px;
+}
+
+.category {
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    opacity: 0.9;
+    font-weight: 500;
+    display: inline-block;
+    background-color: #e0e0e0; 
+    color: var(--text-color);
+}
+
+.post-info h3 a {
+    color: var(--text-color);
+    font-size: 1.4em;
+    transition: color 0.3s;
+}
+
+.post-info h3 a:hover {
+    color: var(--primary-color);
+}
+
+.read-more {
+    font-weight: 700;
+    color: var(--secondary-color);
+    border-bottom: 1px solid transparent;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.read-more:hover {
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+/* 6. Abunə Bölməsi */
+.subscribe-section {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px;
+    padding: 60px 20px;
+    margin: 50px 0;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+}
+
+.subscribe-section h2 {
+    color: white; 
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.subscribe-form input[type="email"] {
+    flex-grow: 1; 
+    padding: 12px 15px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    font-size: 1em;
+}
+
+.subscribe-form button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    margin-left: 0;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 7. Aşağı Səhifə (Footer) */
+.main-footer {
+    background: var(--text-color); 
+    color: #bdc3c7;
+    padding: 20px 0;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.main-footer a {
+    color: #bdc3c7;
+}
+
+.main-footer a:hover {
+    color: var(--secondary-color);
+}
+
+/* 8. Responsiv Dizayn Düzəlişləri (Mobil) */
+@media (max-width: 768px) {
+    /* Naviqasiya Menyu */
+    .main-header .container {
+        padding: 5px 0;
+    }
+    .main-nav {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        background-color: var(--bg-light);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid var(--bg-dark);
+        padding-bottom: 10px;
+    }
+    .main-nav.active {
+        display: flex; 
+    }
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .main-nav li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .main-nav a {
+        padding: 12px 20px;
+    }
+    .menu-toggle {
+        display: block; 
+    }
+
+    /* Dropdown Mobil Düzəliş */
+    .dropdown-content {
+        position: static; 
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: #f7f7f7; 
+        border-top: 1px solid #eee;
+    }
+    .dropdown-content a {
+        color: var(--text-color);
+    }
+
+    /* Ümumi Düzəlişlər */
+    body {
+        padding-top: 60px;
+    }
+    
+    .hero {
+        padding: 50px 20px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subscribe-form input[type="email"],
+    .subscribe-form button {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 25px !important; 
+    }
+    .subscribe-form button {
+        margin-left: 0;
+    }
+}
